@@ -1,0 +1,60 @@
+body {
+	background-color: #5672a1; /*steelblue*/
+	font-family: "Verdana";
+}
+nav ul {
+	padding: 0px;
+	list-style-type: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+}
+nav a {
+	text-align: center;
+	font-weight: bold;
+	text-decoration: none;
+	color: black;
+	font-size: 1.5em;
+	padding: 5px;
+}
+nav li{
+	display: grid;
+}
+nav li a:hover:not(.active) {
+	background-color: white;
+	border: 1px solid white;
+	border-radius: 25px;
+}
+.active {
+	background-color: black;
+	color: white;
+	border: 1px solid black;
+	border-radius: 25px;
+}
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-areas:
+	"header header header"
+	"nav nav nav"
+	". . ."
+	"main main aside";
+	grid-gap: 15px 3rem;
+	grid-template-rows: auto auto 50px auto;
+}
+header {
+	grid-area: header;
+}
+nav {
+	display: grid;
+	grid-area: nav;
+	grid-row-start: nav;
+	grid-row-end: nav;
+}
+main {
+	grid-area: main;
+	grid-template-columns: 1fr 1fr;
+	display: grid;
+	grid-gap: 30px;
+	padding: 15px;
+}
