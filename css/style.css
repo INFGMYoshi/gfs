@@ -2,59 +2,54 @@ body {
 	background-color: #5672a1; /*steelblue*/
 	font-family: "Verdana";
 }
-nav ul {
-	padding: 0px;
-	list-style-type: none;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	grid-gap: 30px;
-}
-nav a {
-	text-align: center;
-	font-weight: bold;
-	text-decoration: none;
-	color: black;
-	font-size: 1.5em;
-	padding: 5px;
-}
-nav li{
-	display: grid;
-}
-nav li a:hover:not(.active) {
-	background-color: white;
-	border: 1px solid white;
-	border-radius: 25px;
-}
-.active {
-	background-color: black;
-	color: white;
-	border: 1px solid black;
-	border-radius: 25px;
-}
 .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-areas:
 	"header header header"
-	"nav nav nav"
 	". . ."
-	"main main aside";
+	"main main main"
+    "footer footer footer";
 	grid-gap: 15px 3rem;
-	grid-template-rows: auto auto 50px auto;
+	grid-template-rows: auto 25px auto auto;
 }
 header {
 	grid-area: header;
 }
-nav {
-	display: grid;
-	grid-area: nav;
-	grid-row-start: nav;
-	grid-row-end: nav;
-}
 main {
 	grid-area: main;
-	grid-template-columns: 1fr 1fr;
 	display: grid;
+	grid-template-areas:
+	"aboutTree aboutTree aboutTree"
+	"fameShame fameShame fameShame"
+	"goals goals goals";
 	grid-gap: 30px;
-	padding: 15px;
+}
+.aboutTree {
+	grid-area: aboutTree;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
+.fameShame {
+	grid-area: fameShame;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
+.goals {
+	grid-area: goals;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
+}
+footer {
+    grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+	border: 1px solid black;
 }
